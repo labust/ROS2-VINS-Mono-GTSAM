@@ -72,9 +72,9 @@ Download [EuRoC MAV Dataset](http://projects.asl.ethz.ch/datasets/doku.php?id=km
 
 3.1.1 Open three terminals, launch the vins_estimator , rviz and play the bag file respectively. Take MH_01 for example
 ```
-    roslaunch vins_estimator euroc.launch 
-    roslaunch vins_estimator vins_rviz.launch
-    rosbag play YOUR_PATH_TO_DATASET/MH_01_easy.bag 
+ros2 launch feature_tracker vins_feature_tracker.launch.py              # for feature tracking and rviz2
+ros2 launch vins_estimator euroc.launch.py                              # for backend optimization and loop closure
+ros2 bag play $(PATH_TO_YOUR_DATASET)/MH_01_easy                        # for ros2 bag
 ```
 (If you fail to open vins_rviz.launch, just open an empty rviz, then load the config file: file -> Open Config-> YOUR_VINS_FOLDER/config/vins_rviz_config.rviz)
 
